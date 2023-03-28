@@ -21,20 +21,19 @@ public class Main {
         }
         int numeroMaximo = 0;
         int quantiaMax = 0;
-        for (Map.Entry<Integer, Integer> entry : contagemNumeros.entrySet()) {
+       for (Map.Entry<Integer, Integer> entry : contagemNumeros.entrySet()) {
             int numero = entry.getKey();
             int quantidade = entry.getValue();
-            if (quantidade > quantiaMax) {
-                numeroMaximo = numero;
-                quantiaMax = quantidade;
+            if (quantidade >= quantiaMax) {
+                if (quantidade == quantiaMax) {
+                    System.out.println("Outro número que mais se repete é: " + numero);
+                } else {
+                    System.out.println("O número que mais se repete é: " + numero);
+                    numeroMaximo = numero;
+                    quantiaMax = quantidade;
+                }
             }
         }
-        System.out.println("O numero que mais se repete é "
-                + numeroMaximo + "," +
-                " repetindo-se "
-                + quantiaMax +
-                " vezes");
-
-
+        sc.close();
     }
 }
